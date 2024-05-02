@@ -38,12 +38,14 @@ jobs:
 
     - name: Release to GitHub Pages
       run: |
-        # Copy your built files to a specific directory (e.g., 'docs' or 'dist')
-        # This assumes that your HTML files are in the root directory of your repository.
-        cp public/front.html docs/front.html  # Adjust this according to your project structure
-        
+        # Create the 'docs' directory if it doesn't exist
+        mkdir -p docs
+        # Copy your built files to the 'docs' directory
+        cp public/front.hhtml docs/front.hhtml
+
     - name: Deploy to GitHub Pages
       uses: JamesIves/github-pages-deploy-action@3.7.1
       with:
         branch: gh-pages   # Specify the branch to deploy to
         folder: docs       # Specify the folder to deploy
+
