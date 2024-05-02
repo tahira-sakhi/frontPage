@@ -26,15 +26,7 @@ jobs:
     steps:
     - name: Checkout code
       uses: actions/checkout@v2
-
-    - name: Install dependencies
-      run: npm install   # If you have any dependencies or testing frameworks
-
-    - name: Run tests
-      run: |
-        # Run your tests here
-        # For a basic HTML project, this step may not be necessary.
-
+      
   release:
     name: Release
     runs-on: ubuntu-latest
