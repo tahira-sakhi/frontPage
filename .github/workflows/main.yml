@@ -36,9 +36,15 @@ jobs:
     - name: Checkout code
       uses: actions/checkout@v2
 
+    - name: Copy files to docs directory
+      run: |
+        mkdir -p docs
+        cp public/front.hhtml docs/front.hhtml
+
     - name: Deploy to GitHub Pages
       uses: JamesIves/github-pages-deploy-action@3.7.1
       with:
-        branch: gh-pages   # Specify the branch to deploy to
-        folder: docs       # Specify the folder to deploy
+        branch: gh-pages
+        folder: docs
+
 
