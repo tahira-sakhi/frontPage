@@ -40,8 +40,8 @@ jobs:
       run: |
         # Copy your built files to a specific directory (e.g., 'docs' or 'dist')
         # This assumes that your HTML files are in the root directory of your repository.
-        cp front.html docs/front.html  # Adjust this according to your project structure
-
+        cp public/front.html docs/front.html  # Adjust this according to your project structure
+        
     - name: Deploy to GitHub Pages
       uses: JamesIves/github-pages-deploy-action@3.7.1
       with:
