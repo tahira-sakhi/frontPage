@@ -6,8 +6,8 @@ on:
       - main
 
 jobs:
-  build:
-    name: Build
+  build_and_auto_pr:
+    name: Build and Auto PR
     runs-on: ubuntu-latest
 
     steps:
@@ -19,19 +19,11 @@ jobs:
           # You can run any build commands here, like compiling SCSS to CSS or minifying JS.
           # For a basic HTML project, this step may not be necessary.
 
-  test_and_auto_pr:
-    name: Test and Auto PR
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v2
-
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@v3
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
-          branch: main
+          branch: dev  # Adjust the source branch name as needed
           title: Automated Pull Request from dev Branch
           body: This pull request was automatically generated after successful build in the dev branch.
           commit-message: Automated Pull Request
