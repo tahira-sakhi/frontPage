@@ -13,6 +13,8 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
+        with:
+           node-version: 20 
 
       - name: Build HTML
         run: |
@@ -23,6 +25,7 @@ jobs:
         uses: peter-evans/create-pull-request@v3
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
+          node-version: 20 
           base: main
           branch: dev  # Adjust the source branch name as needed
           title: Automated Pull Request from dev Branch
