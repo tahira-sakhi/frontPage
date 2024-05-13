@@ -32,8 +32,8 @@ jobs:
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           branch: main
-          title: Automated Pull Request from main Branch
-          body: This pull request was automatically generated after successful build in the main branch.
+          title: Automated Pull Request from dev Branch
+          body: This pull request was automatically generated after successful build in the dev branch.
           commit-message: Automated Pull Request
           labels: automated
 
